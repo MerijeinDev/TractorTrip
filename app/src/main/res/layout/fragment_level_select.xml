@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_sand"
+    android:fitsSystemWindows="true">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_top_safe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.045" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_start_safe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_end_safe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_bottom_safe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="@dimen/pause_button_size"
+        android:layout_height="@dimen/pause_button_size"
+        android:background="@drawable/bg_caution_panel"
+        android:contentDescription="@string/cd_back"
+        android:padding="11dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="@id/gl_start_safe"
+        app:layout_constraintTop_toTopOf="@id/gl_top_safe" />
+
+    <TextView
+        android:id="@+id/tv_screen_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:includeFontPadding="false"
+        android:letterSpacing="0.03"
+        android:shadowColor="@color/text_outline_brown"
+        android:shadowDx="0"
+        android:shadowDy="3"
+        android:shadowRadius="6"
+        android:text="@string/level_select_title"
+        android:textAllCaps="true"
+        android:textColor="@color/text_white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@id/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_back" />
+
+    <LinearLayout
+        android:id="@+id/panel_coins"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/pause_button_size"
+        android:background="@drawable/bg_caution_panel"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintEnd_toEndOf="@id/gl_end_safe"
+        app:layout_constraintTop_toTopOf="@id/btn_back">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="6dp"
+            android:contentDescription="@string/cd_coins"
+            android:src="@drawable/ic_coin" />
+
+        <TextView
+            android:id="@+id/tv_coin_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:shadowColor="@color/text_outline_brown"
+            android:shadowDx="0"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:textColor="@color/text_white"
+            android:textSize="16sp"
+            tools:text="500" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_levels"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="4dp"
+        android:paddingBottom="8dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="@id/gl_bottom_safe"
+        app:layout_constraintEnd_toEndOf="@id/gl_end_safe"
+        app:layout_constraintStart_toStartOf="@id/gl_start_safe"
+        app:layout_constraintTop_toBottomOf="@id/btn_back"
+        tools:itemCount="40"
+        tools:listitem="@layout/item_level_tile" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

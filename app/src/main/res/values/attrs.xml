@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="OutlinedTextView">
+        <attr name="outlineStrokeWidth" format="dimension" />
+        <attr name="outlineStrokeColorTop" format="color" />
+        <attr name="outlineStrokeColorBottom" format="color" />
+    </declare-styleable>
+
+</resources>

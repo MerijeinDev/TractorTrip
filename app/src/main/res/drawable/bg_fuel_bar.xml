@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/fuel_track_bg" />
+            <corners android:radius="@dimen/fuel_bar_corner" />
+        </shape>
+    </item>
+
+    <item
+        android:bottom="@dimen/fuel_bar_padding"
+        android:left="@dimen/fuel_bar_padding"
+        android:right="@dimen/fuel_bar_padding"
+        android:top="@dimen/fuel_bar_padding">
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="0"
+                android:centerColor="@color/fuel_yellow"
+                android:endColor="@color/fuel_green"
+                android:startColor="@color/fuel_red"
+                android:type="linear" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+</layer-list>

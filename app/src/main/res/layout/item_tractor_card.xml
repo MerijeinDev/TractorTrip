@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_root"
+    android:layout_width="@dimen/tractor_card_width"
+    android:layout_height="@dimen/tractor_card_height"
+    android:background="@drawable/bg_tractor_card_unlocked"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/iv_locked_art"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/cd_card_locked"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/shop_card_locked_10"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_card_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:letterSpacing="0.03"
+        android:maxLines="1"
+        android:shadowColor="@color/text_outline_brown"
+        android:shadowDx="0"
+        android:shadowDy="2"
+        android:shadowRadius="3"
+        android:textAllCaps="true"
+        android:textColor="@color/text_white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Big Tires" />
+
+    <ImageView
+        android:id="@+id/iv_card_tractor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/cd_card_tractor"
+        android:scaleType="fitCenter"
+        android:src="@drawable/shop_tractor_1"
+        app:layout_constraintBottom_toTopOf="@id/btn_card_action"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_card_title"
+        tools:src="@drawable/shop_tractor_1" />
+
+    <ImageView
+        android:id="@+id/iv_card_lock"
+        android:layout_width="@dimen/card_lock_size"
+        android:layout_height="@dimen/card_lock_size"
+        android:contentDescription="@string/cd_card_locked"
+        android:src="@drawable/ic_lock"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/iv_card_tractor"
+        app:layout_constraintEnd_toEndOf="@id/iv_card_tractor"
+        app:layout_constraintStart_toStartOf="@id/iv_card_tractor"
+        app:layout_constraintTop_toTopOf="@id/iv_card_tractor"
+        tools:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_card_action"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/card_action_height"
+        android:background="@drawable/bg_next_button"
+        android:fontFamily="sans-serif-black"
+        android:includeFontPadding="false"
+        android:letterSpacing="0.05"
+        android:minHeight="0dp"
+        android:shadowColor="@color/text_outline_brown"
+        android:shadowDx="0"
+        android:shadowDy="2"
+        android:shadowRadius="3"
+        android:stateListAnimator="@null"
+        android:text="@string/card_action_select"
+        android:textAllCaps="true"
+        android:textColor="@color/text_white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

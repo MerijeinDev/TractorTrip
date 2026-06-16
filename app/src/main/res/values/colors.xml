@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="sand_light">#F0B344</color>
+    <color name="sand">#E89F2D</color>
+    <color name="sand_dark">#C7831F</color>
+
+    <color name="stone_tile">#8A857E</color>
+    <color name="stone_tile_dark">#6B6660</color>
+    <color name="stone_tile_light">#A8A39B</color>
+
+    <color name="wood_brown">#6B3F1F</color>
+    <color name="wood_brown_dark">#3D2310</color>
+    <color name="wood_brown_light">#8A5028</color>
+
+    <color name="caution_yellow">#F4C300</color>
+    <color name="caution_black">#1A1A1A</color>
+
+    <color name="heart_red">#E63E2C</color>
+    <color name="heart_red_dark">#A82A1E</color>
+
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_outline_brown">#3D2310</color>
+    <color name="text_shadow">#80000000</color>
+
+    <color name="fuel_red">#D63C2C</color>
+    <color name="fuel_orange">#E89C26</color>
+    <color name="fuel_yellow">#F4D62A</color>
+    <color name="fuel_green">#62A82E</color>
+    <color name="fuel_track_bg">#3D2310</color>
+
+    <color name="tractor_blue">#2A86E8</color>
+    <color name="tractor_blue_dark">#1A5FA8</color>
+    <color name="tractor_yellow">#E8A02D</color>
+
+    <color name="brick_red">#B83C2C</color>
+    <color name="sack_tan">#C49A5C</color>
+    <color name="crate_brown">#A0743A</color>
+    <color name="crane_yellow">#E8B826</color>
+    <color name="barrel_red">#B83C2C</color>
+    <color name="pit_dark">#2A1810</color>
+
+    <color name="overlay_dim">#99000000</color>
+
+    <color name="next_button_top">#F4B833</color>
+    <color name="next_button_bottom">#D88820</color>
+
+    <color name="popup_card_inner">#F5D88B</color>
+    <color name="popup_dim">#B3000000</color>
+
+    <color name="locked_outer">#3D3D3A</color>
+    <color name="locked_inner_light">#A8A39B</color>
+    <color name="locked_inner_dark">#6B6660</color>
+    <color name="locked_text">#3D3D3A</color>
+
+</resources>

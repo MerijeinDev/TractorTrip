@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pause_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/popup_dim"
+    android:clickable="true"
+    android:focusable="true"
+    android:fitsSystemWindows="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="32dp"
+        android:background="@drawable/bg_popup_card"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="28dp"
+        android:paddingBottom="22dp">
+
+        <TextView
+            android:id="@+id/tv_pause_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:shadowColor="@color/text_outline_brown"
+            android:shadowDx="0"
+            android:shadowDy="3"
+            android:shadowRadius="6"
+            android:text="@string/pause_title"
+            android:textAllCaps="true"
+            android:textColor="@color/text_white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_continue"
+            android:layout_width="@dimen/next_button_width"
+            android:layout_height="@dimen/next_button_height"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/bg_next_button"
+            android:fontFamily="sans-serif-black"
+            android:minHeight="0dp"
+            android:stateListAnimator="@null"
+            android:text="@string/pause_continue"
+            android:textAllCaps="true"
+            android:textColor="@color/text_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_pause_title" />
+
+        <Button
+            android:id="@+id/btn_replay"
+            android:layout_width="@dimen/next_button_width"
+            android:layout_height="@dimen/next_button_height"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_next_button"
+            android:fontFamily="sans-serif-black"
+            android:minHeight="0dp"
+            android:stateListAnimator="@null"
+            android:text="@string/popup_retry"
+            android:textAllCaps="true"
+            android:textColor="@color/text_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_continue" />
+
+        <Button
+            android:id="@+id/btn_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="sans-serif-black"
+            android:minHeight="0dp"
+            android:paddingHorizontal="16dp"
+            android:stateListAnimator="@null"
+            android:text="@string/pause_home"
+            android:textAllCaps="true"
+            android:textColor="@color/wood_brown_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_replay" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

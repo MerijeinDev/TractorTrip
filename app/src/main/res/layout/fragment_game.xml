@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_sand"
+    android:fitsSystemWindows="true">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_top_safe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.045" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_bottom_safe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.955" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_start_safe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_end_safe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <TextView
+        android:id="@+id/tv_level_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:includeFontPadding="false"
+        android:letterSpacing="0.02"
+        android:shadowColor="@color/text_outline_brown"
+        android:shadowDx="0"
+        android:shadowDy="3"
+        android:shadowRadius="6"
+        android:textAllCaps="true"
+        android:textColor="@color/text_white"
+        android:textSize="@dimen/level_title_size"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/gl_start_safe"
+        app:layout_constraintTop_toTopOf="@id/gl_top_safe"
+        tools:text="LEVEL 3" />
+
+    <ImageButton
+        android:id="@+id/btn_pause"
+        android:layout_width="@dimen/pause_button_size"
+        android:layout_height="@dimen/pause_button_size"
+        android:background="@drawable/bg_caution_panel"
+        android:contentDescription="@string/cd_pause"
+        android:padding="11dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_pause"
+        app:layout_constraintEnd_toEndOf="@id/gl_end_safe"
+        app:layout_constraintTop_toTopOf="@id/tv_level_title"
+        app:layout_constraintBottom_toBottomOf="@id/tv_level_title" />
+
+    <LinearLayout
+        android:id="@+id/panel_hearts"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/hearts_panel_height"
+        android:background="@drawable/bg_caution_panel"
+        android:contentDescription="@string/cd_lives"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/hearts_panel_padding_h"
+        android:paddingVertical="@dimen/hearts_panel_padding_v"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/btn_pause"
+        app:layout_constraintEnd_toStartOf="@id/btn_pause"
+        app:layout_constraintTop_toTopOf="@id/btn_pause">
+
+        <ImageView
+            android:id="@+id/iv_heart_1"
+            android:layout_width="@dimen/heart_size"
+            android:layout_height="@dimen/heart_size"
+            android:layout_marginEnd="@dimen/heart_spacing"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_heart" />
+
+        <ImageView
+            android:id="@+id/iv_heart_2"
+            android:layout_width="@dimen/heart_size"
+            android:layout_height="@dimen/heart_size"
+            android:layout_marginEnd="@dimen/heart_spacing"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_heart" />
+
+        <ImageView
+            android:id="@+id/iv_heart_3"
+            android:layout_width="@dimen/heart_size"
+            android:layout_height="@dimen/heart_size"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_heart" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/fuel_bar"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/fuel_bar_height"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_fuel_bar"
+        android:contentDescription="@string/cd_fuel"
+        app:layout_constraintEnd_toEndOf="@id/gl_end_safe"
+        app:layout_constraintStart_toStartOf="@id/gl_start_safe"
+        app:layout_constraintTop_toBottomOf="@id/btn_pause" />
+
+    <ImageView
+        android:id="@+id/iv_fuel_marker"
+        android:layout_width="@dimen/fuel_marker_size"
+        android:layout_height="@dimen/fuel_marker_size"
+        android:contentDescription="@string/cd_fuel_marker"
+        android:src="@drawable/item_fuel"
+        app:layout_constraintBottom_toBottomOf="@id/fuel_bar"
+        app:layout_constraintEnd_toEndOf="@id/fuel_bar"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="@id/fuel_bar"
+        app:layout_constraintTop_toTopOf="@id/fuel_bar"
+        tools:ignore="ContentDescription" />
+
+    <FrameLayout
+        android:id="@+id/maze_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/maze_top_margin"
+        android:layout_marginBottom="@dimen/maze_bottom_margin"
+        android:contentDescription="@string/cd_game_field"
+        app:layout_constraintBottom_toTopOf="@id/row_counters"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/gl_end_safe"
+        app:layout_constraintStart_toStartOf="@id/gl_start_safe"
+        app:layout_constraintTop_toBottomOf="@id/fuel_bar"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <LinearLayout
+        android:id="@+id/row_counters"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/counter_marker_height"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintBottom_toBottomOf="@id/gl_bottom_safe"
+        app:layout_constraintEnd_toEndOf="@id/gl_end_safe"
+        app:layout_constraintStart_toStartOf="@id/gl_start_safe">
+
+        <LinearLayout
+            android:id="@+id/marker_crates"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/counter_marker_spacing"
+            android:layout_weight="1"
+            android:background="@drawable/bg_counter_marker"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/counter_marker_padding_h">
+
+            <ImageView
+                android:layout_width="@dimen/counter_marker_icon_size"
+                android:layout_height="@dimen/counter_marker_icon_size"
+                android:layout_marginEnd="6dp"
+                android:contentDescription="@string/cd_crate_counter"
+                android:src="@drawable/item_crate" />
+
+            <TextView
+                android:id="@+id/tv_count_crates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:shadowColor="@color/text_outline_brown"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/counter_text_size"
+                tools:text="0/1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/marker_sacks"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/counter_marker_spacing"
+            android:layout_weight="1"
+            android:background="@drawable/bg_counter_marker"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/counter_marker_padding_h">
+
+            <ImageView
+                android:layout_width="@dimen/counter_marker_icon_size"
+                android:layout_height="@dimen/counter_marker_icon_size"
+                android:layout_marginEnd="6dp"
+                android:contentDescription="@string/cd_sack_counter"
+                android:src="@drawable/item_sack" />
+
+            <TextView
+                android:id="@+id/tv_count_sacks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:shadowColor="@color/text_outline_brown"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/counter_text_size"
+                tools:text="0/2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/marker_bricks"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_counter_marker"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/counter_marker_padding_h">
+
+            <ImageView
+                android:layout_width="@dimen/counter_marker_icon_size"
+                android:layout_height="@dimen/counter_marker_icon_size"
+                android:layout_marginEnd="6dp"
+                android:contentDescription="@string/cd_brick_counter"
+                android:src="@drawable/item_brick" />
+
+            <TextView
+                android:id="@+id/tv_count_bricks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:shadowColor="@color/text_outline_brown"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/counter_text_size"
+                tools:text="0/1" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/game_overlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="false"
+        android:focusable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
