@@ -41,7 +41,7 @@
     <string name="menu_badges">Badges</string>
     <string name="menu_leaderboard">Leaderboard</string>
     <string name="menu_settings">Settings</string>
-    <string name="level_select_title">Choose level</string>
+    <string name="level_select_title">Levels</string>
     <string name="level_locked_toast">Complete the previous level first</string>
     <string name="achievements_title">Achievements</string>
     <string name="achievements_coming_soon">No achievements yet</string>
