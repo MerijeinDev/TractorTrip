@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewGroup.MarginLayoutParams
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.tractorfieldtrip.databinding.ItemTractorCardBinding
@@ -33,70 +34,74 @@ class TractorCardAdapter(
                 marginEnd = if (position == cards.size - 1) 0 else dp(12, context.resources.displayMetrics.density)
             }
 
-            val lockedArt = TractorLockedArt.lockedCardFor(card.skin.unlockLevel)
-            if (!card.shopUnlocked && lockedArt != null) {
-                binding.cardRoot.background = null
-                binding.cardRoot.setPadding(0, 0, 0, 0)
-                binding.ivLockedArt.visibility = View.VISIBLE
-                binding.ivLockedArt.setImageResource(lockedArt)
-                binding.tvCardTitle.visibility = View.GONE
-                binding.ivCardTractor.visibility = View.GONE
-                binding.ivCardLock.visibility = View.GONE
-                binding.btnCardAction.visibility = View.GONE
-                binding.cardRoot.setOnClickListener {
-                    Toast.makeText(
-                        context,
-                        context.getString(R.string.shop_locked_level, card.skin.unlockLevel),
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
+            if (!card.shopUnlocked) {
+                bindLocked(card, context)
                 return
             }
+            bindUnlocked(card, context)
+        }
 
-            binding.cardRoot.setPadding(
-                dp(10, context.resources.displayMetrics.density),
-                dp(10, context.resources.displayMetrics.density),
-                dp(10, context.resources.displayMetrics.density),
-                dp(10, context.resources.displayMetrics.density)
-            )
-            binding.cardRoot.setOnClickListener(null)
-            binding.ivLockedArt.visibility = View.GONE
+        private fun bindLocked(card: TractorCard, context: android.content.Context) {
+            binding.ivCardFrame.scaleType = ImageView.ScaleType.FIT_XY
+            binding.ivCardFrame.setImageResource(R.drawable.shop_card_bg_locked)
+
+            binding.tvCardTitle.visibility = View.VISIBLE
+            binding.tvCardTitle.text = context.getString(R.string.shop_card_level_label, card.skin.unlockLevel)
+
+            binding.ivCardTractor.visibility = View.VISIBLE
+            binding.ivCardTractor.scaleType = ImageView.ScaleType.FIT_CENTER
+            binding.ivCardTractor.setImageResource(R.drawable.ic_lock)
+
             binding.btnCardAction.visibility = View.VISIBLE
-            binding.cardRoot.setBackgroundResource(R.drawable.bg_tractor_card_unlocked)
+            binding.ivCardActionPlate.setImageResource(R.drawable.btn_locked)
+            binding.tvCardAction.visibility = View.GONE
+            binding.ivCardActionCoin.visibility = View.GONE
+
+            binding.cardRoot.setOnClickListener {
+                Toast.makeText(
+                    context,
+                    context.getString(R.string.shop_locked_level, card.skin.unlockLevel),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+
+        private fun bindUnlocked(card: TractorCard, context: android.content.Context) {
+            binding.ivCardFrame.scaleType = ImageView.ScaleType.FIT_XY
+            binding.ivCardFrame.setImageResource(R.drawable.shop_card_bg_v)
+
             binding.tvCardTitle.visibility = View.VISIBLE
             binding.tvCardTitle.setText(card.skin.nameRes)
+
             binding.ivCardTractor.visibility = View.VISIBLE
+            binding.ivCardTractor.scaleType = ImageView.ScaleType.FIT_CENTER
             binding.ivCardTractor.setImageResource(card.skin.spriteRes)
-            binding.ivCardLock.visibility = View.GONE
+
+            binding.btnCardAction.visibility = View.VISIBLE
 
             when {
                 card.selected -> {
-                    binding.btnCardAction.setBackgroundResource(R.drawable.bg_next_button)
-                    binding.btnCardAction.text = context.getString(R.string.card_action_selected)
-                    binding.btnCardAction.setOnClickListener { }
+                    binding.ivCardActionPlate.setImageResource(R.drawable.btn_selected)
+                    binding.tvCardAction.visibility = View.GONE
+                    binding.ivCardActionCoin.visibility = View.GONE
+                    binding.cardRoot.setOnClickListener(null)
                 }
                 card.owned -> {
-                    binding.btnCardAction.setBackgroundResource(R.drawable.bg_next_button)
-                    binding.btnCardAction.text = context.getString(R.string.card_action_select)
-                    binding.btnCardAction.setOnClickListener { onSelect(card.skin) }
+                    binding.ivCardActionPlate.setImageResource(R.drawable.btn_select)
+                    binding.tvCardAction.visibility = View.GONE
+                    binding.ivCardActionCoin.visibility = View.GONE
+                    binding.cardRoot.setOnClickListener { onSelect(card.skin) }
                 }
                 else -> {
-                    binding.btnCardAction.setBackgroundResource(
-                        if (card.canAfford) R.drawable.bg_next_button else R.drawable.bg_card_button_locked
-                    )
-                    binding.btnCardAction.text = context.getString(
-                        R.string.card_action_buy,
-                        card.skin.price
-                    )
-                    binding.btnCardAction.setOnClickListener {
+                    binding.ivCardActionPlate.setImageResource(R.drawable.btn_buy_bg)
+                    binding.tvCardAction.visibility = View.VISIBLE
+                    binding.tvCardAction.text = card.skin.price.toString()
+                    binding.ivCardActionCoin.visibility = View.VISIBLE
+                    binding.cardRoot.setOnClickListener {
                         if (card.canAfford) {
                             onPurchase(card.skin)
                         } else {
-                            Toast.makeText(
-                                context,
-                                R.string.shop_not_enough_coins,
-                                Toast.LENGTH_SHORT
-                            ).show()
+                            Toast.makeText(context, R.string.shop_not_enough_coins, Toast.LENGTH_SHORT).show()
                         }
                     }
                 }

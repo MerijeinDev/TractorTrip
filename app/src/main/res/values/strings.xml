@@ -51,13 +51,14 @@
     <string name="cd_menu_tractor">Menu tractor</string>
     <string name="cd_level_locked">Level locked</string>
 
-    <string name="tractor_select_title">Choose tractor</string>
+    <string name="tractor_select_title">Shop</string>
     <string name="card_action_select">Select</string>
-    <string name="card_action_selected">In use</string>
+    <string name="card_action_selected">Selected</string>
     <string name="card_action_buy">Buy %1$d</string>
     <string name="shop_purchased">Tractor purchased!</string>
     <string name="shop_not_enough_coins">Not enough coins</string>
     <string name="shop_locked_level">Reach level %1$d to unlock</string>
+    <string name="shop_card_level_label">Level %1$d</string>
     <string name="card_locked_prefix">Code %1$02d</string>
     <string name="cd_card_tractor">Tractor</string>
     <string name="cd_card_locked">Locked</string>

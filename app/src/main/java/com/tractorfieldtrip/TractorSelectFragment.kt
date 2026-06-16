@@ -46,7 +46,7 @@ class TractorSelectFragment : Fragment() {
         val coins = GameProgress.getCoins(context)
         binding.tvCoinCount.text = GameProgress.formatCoins(coins)
 
-        val cards = TractorCatalog.all.map { skin ->
+        val real = TractorCatalog.all.map { skin ->
             TractorCard(
                 skin = skin,
                 owned = GameProgress.isSkinOwned(context, skin.id),
@@ -55,6 +55,23 @@ class TractorSelectFragment : Fragment() {
                 shopUnlocked = GameProgress.isSkinUnlockedInShop(context, skin)
             )
         }
+        val placeholders = listOf(10, 15, 20, 25, 30, 35, 40).map { level ->
+            TractorCard(
+                skin = TractorSkin(
+                    id = 1000 + level,
+                    nameRes = R.string.tractor_basic_name,
+                    perkRes = R.string.tractor_basic_perk,
+                    spriteRes = R.drawable.ic_lock,
+                    price = 0,
+                    unlockLevel = level
+                ),
+                owned = false,
+                selected = false,
+                canAfford = false,
+                shopUnlocked = false
+            )
+        }
+        val cards = real + placeholders
 
         adapter = TractorCardAdapter(
             cards = cards,

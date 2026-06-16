@@ -47,8 +47,8 @@
     <dimen name="game_over_decoration_size">110dp</dimen>
     <dimen name="popup_title_max_height">96dp</dimen>
 
-    <dimen name="tractor_card_width">160dp</dimen>
-    <dimen name="tractor_card_height">230dp</dimen>
+    <dimen name="tractor_card_width">283dp</dimen>
+    <dimen name="tractor_card_height">488dp</dimen>
     <dimen name="card_action_height">42dp</dimen>
     <dimen name="card_lock_size">64dp</dimen>
 

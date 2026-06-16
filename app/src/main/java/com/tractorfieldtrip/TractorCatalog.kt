@@ -26,7 +26,7 @@ object TractorCatalog {
             perkRes = R.string.tractor_basic_perk,
             spriteRes = R.drawable.shop_tractor_1,
             price = 0,
-            unlockLevel = 10
+            unlockLevel = 1
         ),
         TractorSkin(
             id = 2,
@@ -34,7 +34,7 @@ object TractorCatalog {
             perkRes = R.string.tractor_big_tires_perk,
             spriteRes = R.drawable.shop_tractor_2,
             price = 100,
-            unlockLevel = 15,
+            unlockLevel = 1,
             bigTires = true
         ),
         TractorSkin(
@@ -43,7 +43,7 @@ object TractorCatalog {
             perkRes = R.string.tractor_fuel_perk,
             spriteRes = R.drawable.shop_tractor_3,
             price = 200,
-            unlockLevel = 20,
+            unlockLevel = 1,
             fuelSaver = true
         ),
         TractorSkin(
@@ -52,7 +52,7 @@ object TractorCatalog {
             perkRes = R.string.tractor_heavy_perk,
             spriteRes = R.drawable.shop_tractor_4,
             price = 300,
-            unlockLevel = 25,
+            unlockLevel = 1,
             heavy = true
         ),
         TractorSkin(
@@ -61,7 +61,7 @@ object TractorCatalog {
             perkRes = R.string.tractor_twin_perk,
             spriteRes = R.drawable.shop_tractor_5,
             price = 500,
-            unlockLevel = 30,
+            unlockLevel = 1,
             twinEngine = true
         )
     )
