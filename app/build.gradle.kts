@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.tractorfieldtrip"
+    namespace = "farmyard.tractortrip.lab"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.tractorfieldtrip"
+        applicationId = "farmyard.tractortrip.lab"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

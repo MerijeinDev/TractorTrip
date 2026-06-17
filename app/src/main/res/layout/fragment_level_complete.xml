@@ -92,7 +92,7 @@
                     android:contentDescription="@string/cd_coins"
                     android:src="@drawable/ic_coin" />
 
-                <com.tractorfieldtrip.OutlinedTextView
+                <farmyard.tractortrip.lab.OutlinedTextView
                     android:id="@+id/tv_coin_reward"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -121,7 +121,7 @@
                     android:scaleType="fitXY"
                     android:src="@drawable/btn_buy_bg" />
 
-                <com.tractorfieldtrip.OutlinedTextView
+                <farmyard.tractortrip.lab.OutlinedTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -153,7 +153,7 @@
                     android:scaleType="fitXY"
                     android:src="@drawable/btn_buy_bg" />
 
-                <com.tractorfieldtrip.OutlinedTextView
+                <farmyard.tractortrip.lab.OutlinedTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

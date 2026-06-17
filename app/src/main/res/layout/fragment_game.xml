@@ -45,7 +45,7 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.96" />
 
-    <com.tractorfieldtrip.OutlinedTextView
+    <farmyard.tractortrip.lab.OutlinedTextView
         android:id="@+id/tv_level_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -194,7 +194,7 @@
                 android:contentDescription="@string/cd_crate_counter"
                 android:src="@drawable/item_crate" />
 
-            <com.tractorfieldtrip.OutlinedTextView
+            <farmyard.tractortrip.lab.OutlinedTextView
                 android:id="@+id/tv_count_crates"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -226,7 +226,7 @@
                 android:contentDescription="@string/cd_sack_counter"
                 android:src="@drawable/item_sack" />
 
-            <com.tractorfieldtrip.OutlinedTextView
+            <farmyard.tractortrip.lab.OutlinedTextView
                 android:id="@+id/tv_count_sacks"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -257,7 +257,7 @@
                 android:contentDescription="@string/cd_brick_counter"
                 android:src="@drawable/item_brick" />
 
-            <com.tractorfieldtrip.OutlinedTextView
+            <farmyard.tractortrip.lab.OutlinedTextView
                 android:id="@+id/tv_count_bricks"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

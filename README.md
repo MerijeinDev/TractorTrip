@@ -26,7 +26,7 @@ TractorFieldTrip/
     ├── proguard-rules.pro
     └── src/main/
         ├── AndroidManifest.xml
-        ├── java/com/tractorfieldtrip/
+        ├── java/farmyard/tractortrip/lab/
         │   ├── MainActivity.kt               (single-activity host)
         │   └── GameFragment.kt               (ViewBinding, renders HUD)
         └── res/

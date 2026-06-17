@@ -64,7 +64,7 @@
                 android:contentDescription="@string/cd_coins"
                 android:src="@drawable/ic_coin" />
 
-            <com.tractorfieldtrip.OutlinedTextView
+            <farmyard.tractortrip.lab.OutlinedTextView
                 android:id="@+id/tv_coin_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -121,7 +121,7 @@
                 android:scaleType="fitXY"
                 android:src="@drawable/btn_play_plate" />
 
-            <com.tractorfieldtrip.OutlinedTextView
+            <farmyard.tractortrip.lab.OutlinedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -170,7 +170,7 @@
                         android:scaleType="fitCenter"
                         android:src="@drawable/ic_cart" />
 
-                    <com.tractorfieldtrip.OutlinedTextView
+                    <farmyard.tractortrip.lab.OutlinedTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|bottom"
@@ -221,7 +221,7 @@
                         android:contentDescription="@null"
                         android:src="@drawable/ic_medal" />
 
-                    <com.tractorfieldtrip.OutlinedTextView
+                    <farmyard.tractortrip.lab.OutlinedTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|bottom"

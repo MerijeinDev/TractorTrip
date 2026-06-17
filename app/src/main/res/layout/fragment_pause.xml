@@ -30,7 +30,7 @@
             android:paddingTop="40dp"
             android:paddingBottom="44dp">
 
-            <com.tractorfieldtrip.OutlinedTextView
+            <farmyard.tractortrip.lab.OutlinedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/erica_one"
@@ -59,7 +59,7 @@
                     android:scaleType="fitXY"
                     android:src="@drawable/btn_buy_bg" />
 
-                <com.tractorfieldtrip.OutlinedTextView
+                <farmyard.tractortrip.lab.OutlinedTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -91,7 +91,7 @@
                     android:scaleType="fitXY"
                     android:src="@drawable/btn_buy_bg" />
 
-                <com.tractorfieldtrip.OutlinedTextView
+                <farmyard.tractortrip.lab.OutlinedTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -123,7 +123,7 @@
                     android:scaleType="fitXY"
                     android:src="@drawable/btn_buy_bg" />
 
-                <com.tractorfieldtrip.OutlinedTextView
+                <farmyard.tractortrip.lab.OutlinedTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

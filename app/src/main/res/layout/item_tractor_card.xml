@@ -17,7 +17,7 @@
         android:scaleType="fitXY"
         android:src="@drawable/shop_card_bg_v" />
 
-    <com.tractorfieldtrip.OutlinedTextView
+    <farmyard.tractortrip.lab.OutlinedTextView
         android:id="@+id/tv_card_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <com.tractorfieldtrip.OutlinedTextView
+            <farmyard.tractortrip.lab.OutlinedTextView
                 android:id="@+id/tv_card_action"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
