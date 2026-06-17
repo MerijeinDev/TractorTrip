@@ -9,82 +9,139 @@
     android:focusable="true"
     android:fitsSystemWindows="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    <FrameLayout
+        android:layout_width="283dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginHorizontal="32dp"
-        android:background="@drawable/bg_popup_card"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="28dp"
-        android:paddingBottom="22dp">
+        android:layout_gravity="center">
 
-        <TextView
-            android:id="@+id/tv_pause_title"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/shop_card_bg_v" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
-            android:shadowColor="@color/text_outline_brown"
-            android:shadowDx="0"
-            android:shadowDy="3"
-            android:shadowRadius="6"
-            android:text="@string/pause_title"
-            android:textAllCaps="true"
-            android:textColor="@color/text_white"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="36dp"
+            android:paddingTop="40dp"
+            android:paddingBottom="44dp">
 
-        <Button
-            android:id="@+id/btn_continue"
-            android:layout_width="@dimen/next_button_width"
-            android:layout_height="@dimen/next_button_height"
-            android:layout_marginTop="22dp"
-            android:background="@drawable/bg_next_button"
-            android:fontFamily="sans-serif-black"
-            android:minHeight="0dp"
-            android:stateListAnimator="@null"
-            android:text="@string/pause_continue"
-            android:textAllCaps="true"
-            android:textColor="@color/text_white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_pause_title" />
+            <com.tractorfieldtrip.OutlinedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/erica_one"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.05"
+                android:text="@string/pause_title"
+                android:textAllCaps="true"
+                android:textColor="@color/text_white"
+                android:textSize="32sp"
+                app:outlineStrokeColorBottom="#722501"
+                app:outlineStrokeColorTop="#D95500"
+                app:outlineStrokeWidth="5dp" />
 
-        <Button
-            android:id="@+id/btn_replay"
-            android:layout_width="@dimen/next_button_width"
-            android:layout_height="@dimen/next_button_height"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/bg_next_button"
-            android:fontFamily="sans-serif-black"
-            android:minHeight="0dp"
-            android:stateListAnimator="@null"
-            android:text="@string/popup_retry"
-            android:textAllCaps="true"
-            android:textColor="@color/text_white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_continue" />
+            <FrameLayout
+                android:id="@+id/btn_home"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="22dp"
+                android:clickable="true"
+                android:focusable="true">
 
-        <Button
-            android:id="@+id/btn_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@android:color/transparent"
-            android:fontFamily="sans-serif-black"
-            android:minHeight="0dp"
-            android:paddingHorizontal="16dp"
-            android:stateListAnimator="@null"
-            android:text="@string/pause_home"
-            android:textAllCaps="true"
-            android:textColor="@color/wood_brown_dark"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_replay" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/btn_buy_bg" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <com.tractorfieldtrip.OutlinedTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/erica_one"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0.05"
+                    android:text="@string/pause_home"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_white"
+                    android:textSize="20sp"
+                    app:outlineStrokeColorBottom="#722501"
+                    app:outlineStrokeColorTop="#D95500"
+                    app:outlineStrokeWidth="3dp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/btn_replay"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/btn_buy_bg" />
+
+                <com.tractorfieldtrip.OutlinedTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/erica_one"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0.05"
+                    android:text="@string/popup_retry"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_white"
+                    android:textSize="20sp"
+                    app:outlineStrokeColorBottom="#722501"
+                    app:outlineStrokeColorTop="#D95500"
+                    app:outlineStrokeWidth="3dp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/btn_continue"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/btn_buy_bg" />
+
+                <com.tractorfieldtrip.OutlinedTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/erica_one"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0.05"
+                    android:text="@string/pause_continue"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_white"
+                    android:textSize="20sp"
+                    app:outlineStrokeColorBottom="#722501"
+                    app:outlineStrokeColorTop="#D95500"
+                    app:outlineStrokeWidth="3dp" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
 
 </FrameLayout>

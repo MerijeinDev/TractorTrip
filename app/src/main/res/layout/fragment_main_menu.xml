@@ -155,29 +155,37 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="10dp"
-                >
+                android:padding="10dp">
 
-                <ImageView
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:contentDescription="@null"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_cart" />
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical">
 
-                <com.tractorfieldtrip.OutlinedTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/erica_one"
-                    android:text="@string/menu_shop"
-                    android:textAllCaps="true"
-                    android:textColor="@color/text_white"
-                    android:textSize="18sp"
-                    app:outlineStrokeColorBottom="#722501"
-                    app:outlineStrokeColorTop="#D95500"
-                    app:outlineStrokeWidth="3dp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@null"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_cart" />
+
+                    <com.tractorfieldtrip.OutlinedTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|bottom"
+                        android:layout_marginBottom="2dp"
+                        android:fontFamily="@font/erica_one"
+                        android:text="@string/menu_shop"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_white"
+                        android:textSize="20sp"
+                        app:outlineStrokeColorBottom="#722501"
+                        app:outlineStrokeColorTop="#D95500"
+                        app:outlineStrokeWidth="3dp" />
+
+                </FrameLayout>
+
 
             </LinearLayout>
 
@@ -201,26 +209,35 @@
                 android:orientation="vertical"
                 android:padding="10dp">
 
-                <ImageView
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:contentDescription="@null"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_medal" />
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical">
 
-                <com.tractorfieldtrip.OutlinedTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/erica_one"
-                    android:text="@string/menu_badges"
-                    android:textAllCaps="true"
-                    android:textColor="@color/text_white"
-                    android:textSize="18sp"
-                    app:outlineStrokeColorBottom="#722501"
-                    app:outlineStrokeColorTop="#D95500"
-                    app:outlineStrokeWidth="3dp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_medal" />
+
+                    <com.tractorfieldtrip.OutlinedTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|bottom"
+                        android:layout_marginBottom="2dp"
+                        android:fontFamily="@font/erica_one"
+                        android:text="@string/menu_badges"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_white"
+                        android:textSize="18sp"
+                        app:outlineStrokeColorBottom="#722501"
+                        app:outlineStrokeColorTop="#D95500"
+                        app:outlineStrokeWidth="3dp" />
+
+
+                </FrameLayout>
+
 
             </LinearLayout>
 
