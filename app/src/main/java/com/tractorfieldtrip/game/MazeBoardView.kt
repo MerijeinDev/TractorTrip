@@ -29,9 +29,6 @@ class MazeBoardView(
     private val useDual = levelNumber >= perks.dualTractorFromLevel() && level.secondStartCell != null
     private val engine = GameEngine(level, perks, useDual)
 
-    private val sandPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = ContextCompat.getColor(context, R.color.sand)
-    }
     private val highlightPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = ContextCompat.getColor(context, R.color.caution_yellow)
         style = Paint.Style.STROKE
@@ -192,8 +189,6 @@ class MazeBoardView(
         val boardHeight = cellSize * level.height
         val offsetX = (width - boardWidth) / 2f
         val offsetY = (height - boardHeight) / 2f
-
-        canvas.drawRect(0f, 0f, width.toFloat(), height.toFloat(), sandPaint)
 
         for (row in 0 until level.height) {
             for (col in 0 until level.width) {
