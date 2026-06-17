@@ -15,7 +15,7 @@ class NoInternetFragment : Fragment() {
     private var _binding: FragmentNoInternetBinding? = null
     private val binding get() = _binding!!
 
-    private var spinAnimator: ObjectAnimator? = null
+    private var rotateAnimator: ObjectAnimator? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,38 +30,38 @@ class NoInternetFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.btnRetry.setOnClickListener {
             context?.let { SoundManager.play(it, SoundManager.Effect.CLICK) }
-            startSpin()
+            startRotation()
             (parentFragment as? NoInternetHost)?.onRetryConnection()
-            binding.btnRetry.postDelayed({ stopSpin() }, SPIN_FEEDBACK_MS)
+            binding.btnRetry.postDelayed({ stopRotation() }, ROTATION_FEEDBACK_MS)
         }
     }
 
-    private fun startSpin() {
-        spinAnimator?.cancel()
+    private fun startRotation() {
+        rotateAnimator?.cancel()
         val target = _binding?.ivRetryIcon ?: return
-        spinAnimator = ObjectAnimator.ofFloat(target, View.ROTATION, 0f, 360f).apply {
-            duration = SPIN_DURATION_MS
+        rotateAnimator = ObjectAnimator.ofFloat(target, View.ROTATION, 0f, 360f).apply {
+            duration = ROTATION_DURATION_MS
             repeatCount = ValueAnimator.INFINITE
             interpolator = LinearInterpolator()
             start()
         }
     }
 
-    private fun stopSpin() {
-        spinAnimator?.cancel()
-        spinAnimator = null
+    private fun stopRotation() {
+        rotateAnimator?.cancel()
+        rotateAnimator = null
         _binding?.ivRetryIcon?.rotation = 0f
     }
 
     override fun onDestroyView() {
-        spinAnimator?.cancel()
-        spinAnimator = null
+        rotateAnimator?.cancel()
+        rotateAnimator = null
         super.onDestroyView()
         _binding = null
     }
 
     companion object {
-        private const val SPIN_DURATION_MS = 800L
-        private const val SPIN_FEEDBACK_MS = 1200L
+        private const val ROTATION_DURATION_MS = 800L
+        private const val ROTATION_FEEDBACK_MS = 1200L
     }
 }
