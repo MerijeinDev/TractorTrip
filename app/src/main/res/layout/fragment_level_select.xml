@@ -79,6 +79,7 @@
             android:id="@+id/tv_screen_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/erica_one"
             android:includeFontPadding="false"
             android:letterSpacing="0.04"
@@ -87,11 +88,12 @@
             android:textColor="@color/text_white"
             android:textSize="30sp"
             app:layout_constraintEnd_toStartOf="@+id/panel_coins"
+            app:layout_constraintHorizontal_bias="0.544"
             app:layout_constraintStart_toEndOf="@+id/btn_back"
+            app:layout_constraintTop_toTopOf="@+id/gl_top_safe"
             app:outlineStrokeColorBottom="#722501"
             app:outlineStrokeColorTop="#D95500"
-            app:outlineStrokeWidth="5dp"
-            tools:layout_editor_absoluteY="48dp" />
+            app:outlineStrokeWidth="5dp" />
 
         <LinearLayout
             android:id="@+id/panel_coins"

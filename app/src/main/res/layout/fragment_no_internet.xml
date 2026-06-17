@@ -1,89 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/no_internet_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/popup_dim"
+    android:background="@color/sand"
     android:clickable="true"
     android:focusable="true"
     android:fitsSystemWindows="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/splash_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <farmyard.tractortrip.lab.OutlinedTextView
+        android:id="@+id/tv_no_internet_message"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_marginHorizontal="32dp"
-        android:background="@drawable/bg_popup_card"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="28dp"
-        android:paddingBottom="22dp">
+        android:fontFamily="@font/erica_one"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:letterSpacing="0.02"
+        android:lineSpacingExtra="2dp"
+        android:text="@string/no_internet_message"
+        android:textAllCaps="false"
+        android:textColor="@color/text_white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_retry"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:outlineStrokeColorBottom="#722501"
+        app:outlineStrokeColorTop="#D95500"
+        app:outlineStrokeWidth="5dp" />
 
-        <TextView
-            android:id="@+id/tv_no_internet_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
-            android:gravity="center"
-            android:shadowColor="@color/text_outline_brown"
-            android:shadowDx="0"
-            android:shadowDy="3"
-            android:shadowRadius="6"
-            android:text="@string/no_internet_title"
-            android:textAllCaps="true"
-            android:textColor="@color/text_white"
-            android:textSize="22sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <FrameLayout
+        android:id="@+id/btn_retry"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_no_internet_message">
 
-        <TextView
-            android:id="@+id/tv_no_internet_message"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:gravity="center"
-            android:lineSpacingExtra="4dp"
-            android:text="@string/no_internet_message"
-            android:textColor="@color/wood_brown_dark"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_no_internet_title" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/cd_refresh"
+            android:scaleType="fitXY"
+            android:src="@drawable/btn_settings_plate" />
 
-        <Button
-            android:id="@+id/btn_retry"
-            android:layout_width="@dimen/next_button_width"
-            android:layout_height="@dimen/next_button_height"
-            android:layout_marginTop="22dp"
-            android:background="@drawable/bg_next_button"
-            android:fontFamily="sans-serif-black"
-            android:minHeight="0dp"
-            android:stateListAnimator="@null"
-            android:text="@string/no_internet_retry"
-            android:textAllCaps="true"
-            android:textColor="@color/text_white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_no_internet_message" />
+        <ImageView
+            android:id="@+id/iv_retry_icon"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_refresh"
+            tools:ignore="UseAppTint" />
 
-        <Button
-            android:id="@+id/btn_offline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@android:color/transparent"
-            android:fontFamily="sans-serif-black"
-            android:minHeight="0dp"
-            android:paddingHorizontal="16dp"
-            android:stateListAnimator="@null"
-            android:text="@string/no_internet_offline"
-            android:textAllCaps="true"
-            android:textColor="@color/wood_brown_dark"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_retry" />
+    </FrameLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

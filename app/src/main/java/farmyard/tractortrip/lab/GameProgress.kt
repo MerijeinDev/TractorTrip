@@ -18,6 +18,7 @@ object GameProgress {
     private const val KEY_SOUND_ENABLED = "sound_enabled"
     private const val KEY_MUSIC_ENABLED = "music_enabled"
     private const val KEY_TOTAL_DISTANCE = "total_distance"
+    private const val KEY_NOTIFICATION_PROMPT_SHOWN = "notification_prompt_shown"
 
     private fun prefs(context: Context) =
         context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
@@ -27,6 +28,13 @@ object GameProgress {
 
     fun setOnboardingDone(context: Context) {
         prefs(context).edit().putBoolean(KEY_ONBOARDING_DONE, true).apply()
+    }
+
+    fun isNotificationPromptShown(context: Context): Boolean =
+        prefs(context).getBoolean(KEY_NOTIFICATION_PROMPT_SHOWN, false)
+
+    fun setNotificationPromptShown(context: Context) {
+        prefs(context).edit().putBoolean(KEY_NOTIFICATION_PROMPT_SHOWN, true).apply()
     }
 
     fun getCoins(context: Context): Int =

@@ -1,7 +1,6 @@
 package farmyard.tractortrip.lab
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import farmyard.tractortrip.lab.databinding.ItemOnboardingBinding
@@ -25,15 +24,9 @@ class OnboardingAdapter(
             binding.tvOnboardingText.setText(page.textRes)
 
             val isLastPage = position == pages.size - 1
-            binding.tvBtnLabel.visibility = if (isLastPage) View.VISIBLE else View.GONE
-            if (isLastPage) {
-                binding.tvBtnLabel.setText(R.string.onboarding_play)
-                binding.btnNext.contentDescription =
-                    binding.root.context.getString(R.string.onboarding_play)
-            } else {
-                binding.btnNext.contentDescription =
-                    binding.root.context.getString(R.string.onboarding_next)
-            }
+            binding.btnNext.contentDescription = binding.root.context.getString(
+                if (isLastPage) R.string.onboarding_play else R.string.onboarding_next
+            )
 
             binding.btnNext.setOnClickListener { onNext(position) }
         }

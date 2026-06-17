@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/notification_permission_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sand"
+    android:clickable="true"
+    android:focusable="true"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/splash_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <farmyard.tractortrip.lab.OutlinedTextView
+        android:id="@+id/tv_notification_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:fontFamily="@font/erica_one"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:letterSpacing="0.02"
+        android:lineSpacingExtra="2dp"
+        android:text="@string/notification_prompt_message"
+        android:textAllCaps="false"
+        android:textColor="@color/text_white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/row_buttons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:outlineStrokeColorBottom="#722501"
+        app:outlineStrokeColorTop="#D95500"
+        app:outlineStrokeWidth="5dp" />
+
+    <LinearLayout
+        android:id="@+id/row_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_notification_message">
+
+        <FrameLayout
+            android:id="@+id/btn_skip"
+            android:layout_width="120dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/notification_prompt_skip"
+                android:scaleType="fitXY"
+                android:src="@drawable/btn_notify_secondary" />
+
+            <farmyard.tractortrip.lab.OutlinedTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/erica_one"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.06"
+                android:text="@string/notification_prompt_skip"
+                android:textAllCaps="true"
+                android:textColor="@color/text_white"
+                android:textSize="18sp"
+                app:outlineStrokeColorBottom="#722501"
+                app:outlineStrokeColorTop="#D95500"
+                app:outlineStrokeWidth="3dp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/btn_accept"
+            android:layout_width="160dp"
+            android:layout_height="72dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/notification_prompt_accept"
+                android:scaleType="fitXY"
+                android:src="@drawable/btn_notify_primary" />
+
+            <farmyard.tractortrip.lab.OutlinedTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/erica_one"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.06"
+                android:text="@string/notification_prompt_accept"
+                android:textAllCaps="true"
+                android:textColor="@color/text_white"
+                android:textSize="22sp"
+                app:outlineStrokeColorBottom="#722501"
+                app:outlineStrokeColorTop="#D95500"
+                app:outlineStrokeWidth="4dp" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
