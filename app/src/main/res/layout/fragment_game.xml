@@ -4,8 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_sand"
     android:fitsSystemWindows="true">
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_game"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_top_safe"
@@ -35,73 +45,83 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.96" />
 
-    <TextView
+    <com.tractorfieldtrip.OutlinedTextView
         android:id="@+id/tv_level_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/erica_one"
         android:includeFontPadding="false"
-        android:letterSpacing="0.02"
-        android:shadowColor="@color/text_outline_brown"
-        android:shadowDx="0"
-        android:shadowDy="3"
-        android:shadowRadius="6"
+        android:letterSpacing="0.04"
         android:textAllCaps="true"
         android:textColor="@color/text_white"
-        android:textSize="@dimen/level_title_size"
-        android:textStyle="bold"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@id/btn_pause"
         app:layout_constraintStart_toStartOf="@id/gl_start_safe"
-        app:layout_constraintTop_toTopOf="@id/gl_top_safe"
+        app:layout_constraintTop_toTopOf="@id/btn_pause"
+        app:outlineStrokeColorBottom="#722501"
+        app:outlineStrokeColorTop="#D95500"
+        app:outlineStrokeWidth="5dp"
         tools:text="LEVEL 3" />
 
-    <ImageButton
+    <FrameLayout
         android:id="@+id/btn_pause"
-        android:layout_width="@dimen/pause_button_size"
-        android:layout_height="@dimen/pause_button_size"
-        android:background="@drawable/bg_caution_panel"
-        android:contentDescription="@string/cd_pause"
-        android:padding="11dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_pause"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintEnd_toEndOf="@id/gl_end_safe"
-        app:layout_constraintTop_toTopOf="@id/tv_level_title"
-        app:layout_constraintBottom_toBottomOf="@id/tv_level_title" />
+        app:layout_constraintTop_toTopOf="@id/gl_top_safe">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/cd_pause"
+            android:scaleType="fitXY"
+            android:src="@drawable/btn_settings_plate" />
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_pause" />
+
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/panel_hearts"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/hearts_panel_height"
-        android:background="@drawable/bg_caution_panel"
+        android:layout_height="52dp"
+        android:background="@drawable/coin_panel_bg"
         android:contentDescription="@string/cd_lives"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingHorizontal="@dimen/hearts_panel_padding_h"
-        android:paddingVertical="@dimen/hearts_panel_padding_v"
         android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
         app:layout_constraintBottom_toBottomOf="@id/btn_pause"
         app:layout_constraintEnd_toStartOf="@id/btn_pause"
         app:layout_constraintTop_toTopOf="@id/btn_pause">
 
         <ImageView
             android:id="@+id/iv_heart_1"
-            android:layout_width="@dimen/heart_size"
-            android:layout_height="@dimen/heart_size"
-            android:layout_marginEnd="@dimen/heart_spacing"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="4dp"
             android:importantForAccessibility="no"
             android:src="@drawable/ic_heart" />
 
         <ImageView
             android:id="@+id/iv_heart_2"
-            android:layout_width="@dimen/heart_size"
-            android:layout_height="@dimen/heart_size"
-            android:layout_marginEnd="@dimen/heart_spacing"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="4dp"
             android:importantForAccessibility="no"
             android:src="@drawable/ic_heart" />
 
         <ImageView
             android:id="@+id/iv_heart_3"
-            android:layout_width="@dimen/heart_size"
-            android:layout_height="@dimen/heart_size"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
             android:importantForAccessibility="no"
             android:src="@drawable/ic_heart" />
 
@@ -111,7 +131,7 @@
         android:id="@+id/fuel_bar"
         android:layout_width="0dp"
         android:layout_height="@dimen/fuel_bar_height"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="14dp"
         android:background="@drawable/bg_fuel_bar"
         android:contentDescription="@string/cd_fuel"
         app:layout_constraintEnd_toEndOf="@id/gl_end_safe"
@@ -148,7 +168,7 @@
     <LinearLayout
         android:id="@+id/row_counters"
         android:layout_width="0dp"
-        android:layout_height="@dimen/counter_marker_height"
+        android:layout_height="52dp"
         android:baselineAligned="false"
         android:orientation="horizontal"
         android:weightSum="3"
@@ -160,31 +180,30 @@
             android:id="@+id/marker_crates"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginEnd="@dimen/counter_marker_spacing"
+            android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:background="@drawable/bg_counter_marker"
+            android:background="@drawable/coin_panel_bg"
             android:gravity="center"
             android:orientation="horizontal"
-            android:paddingHorizontal="@dimen/counter_marker_padding_h">
+            android:paddingHorizontal="10dp">
 
             <ImageView
-                android:layout_width="@dimen/counter_marker_icon_size"
-                android:layout_height="@dimen/counter_marker_icon_size"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
                 android:layout_marginEnd="6dp"
                 android:contentDescription="@string/cd_crate_counter"
                 android:src="@drawable/item_crate" />
 
-            <TextView
+            <com.tractorfieldtrip.OutlinedTextView
                 android:id="@+id/tv_count_crates"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:shadowColor="@color/text_outline_brown"
-                android:shadowDx="0"
-                android:shadowDy="2"
-                android:shadowRadius="3"
+                android:fontFamily="@font/erica_one"
                 android:textColor="@color/text_white"
-                android:textSize="@dimen/counter_text_size"
+                android:textSize="18sp"
+                app:outlineStrokeColorBottom="#722501"
+                app:outlineStrokeColorTop="#D95500"
+                app:outlineStrokeWidth="3dp"
                 tools:text="0/1" />
 
         </LinearLayout>
@@ -193,32 +212,31 @@
             android:id="@+id/marker_sacks"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginEnd="@dimen/counter_marker_spacing"
+            android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:background="@drawable/bg_counter_marker"
+            android:background="@drawable/coin_panel_bg"
             android:gravity="center"
             android:orientation="horizontal"
-            android:paddingHorizontal="@dimen/counter_marker_padding_h">
+            android:paddingHorizontal="10dp">
 
             <ImageView
-                android:layout_width="@dimen/counter_marker_icon_size"
-                android:layout_height="@dimen/counter_marker_icon_size"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
                 android:layout_marginEnd="6dp"
                 android:contentDescription="@string/cd_sack_counter"
                 android:src="@drawable/item_sack" />
 
-            <TextView
+            <com.tractorfieldtrip.OutlinedTextView
                 android:id="@+id/tv_count_sacks"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:shadowColor="@color/text_outline_brown"
-                android:shadowDx="0"
-                android:shadowDy="2"
-                android:shadowRadius="3"
+                android:fontFamily="@font/erica_one"
                 android:textColor="@color/text_white"
-                android:textSize="@dimen/counter_text_size"
-                tools:text="0/2" />
+                android:textSize="18sp"
+                app:outlineStrokeColorBottom="#722501"
+                app:outlineStrokeColorTop="#D95500"
+                app:outlineStrokeWidth="3dp"
+                tools:text="1/2" />
 
         </LinearLayout>
 
@@ -227,30 +245,29 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/bg_counter_marker"
+            android:background="@drawable/coin_panel_bg"
             android:gravity="center"
             android:orientation="horizontal"
-            android:paddingHorizontal="@dimen/counter_marker_padding_h">
+            android:paddingHorizontal="10dp">
 
             <ImageView
-                android:layout_width="@dimen/counter_marker_icon_size"
-                android:layout_height="@dimen/counter_marker_icon_size"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
                 android:layout_marginEnd="6dp"
                 android:contentDescription="@string/cd_brick_counter"
                 android:src="@drawable/item_brick" />
 
-            <TextView
+            <com.tractorfieldtrip.OutlinedTextView
                 android:id="@+id/tv_count_bricks"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:shadowColor="@color/text_outline_brown"
-                android:shadowDx="0"
-                android:shadowDy="2"
-                android:shadowRadius="3"
+                android:fontFamily="@font/erica_one"
                 android:textColor="@color/text_white"
-                android:textSize="@dimen/counter_text_size"
-                tools:text="0/1" />
+                android:textSize="18sp"
+                app:outlineStrokeColorBottom="#722501"
+                app:outlineStrokeColorTop="#D95500"
+                app:outlineStrokeWidth="3dp"
+                tools:text="1/1" />
 
         </LinearLayout>
 
