@@ -49,8 +49,7 @@ class LevelCompleteFragment : Fragment() {
         binding.ivStarRight.setImageResource(
             if (stars >= 3) R.drawable.sprite_star else R.drawable.ic_star_empty
         )
-        binding.tvStatMaterials.text = getString(R.string.percent_format, materialsPct)
-        binding.tvStatFuel.text = getString(R.string.percent_format, fuelLeftPct)
+        binding.tvCoinReward.text = GameProgress.formatCoins(coinsEarned)
 
         binding.btnNextLevel.setOnClickListener {
             SoundManager.play(context, SoundManager.Effect.CLICK)

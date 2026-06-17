@@ -22,7 +22,7 @@
     <string name="onboarding_next">Next</string>
     <string name="onboarding_play">Play</string>
 
-    <string name="popup_next_level">Next level</string>
+    <string name="popup_next_level">Next</string>
     <string name="popup_retry">Retry</string>
     <string name="popup_menu">Menu</string>
     <string name="pause_title">Paused</string>
